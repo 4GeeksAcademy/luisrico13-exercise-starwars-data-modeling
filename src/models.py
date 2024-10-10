@@ -29,19 +29,17 @@ class User(Base):
     username = Column(String(250), nullable=False)
     password = Column(String(250), nullable=False)
     name = Column(String(250), nullable=False)
-    favorite_planet = Column(Integer, ForeignKey('Planet.id'))
     planet = relationship(Planet)
-    favorite_character = Column(Integer, ForeignKey('Character.id'))
     Character = relationship(Character)
 
-class Post(Base):
-    __tablename__ = 'Post'
-    # Here we define columns for the table person
-    # Notice that each column is also a normal Python instance attribute.
-    id = Column(Integer, primary_key=True)
-    post_comment = Column(String(250), nullable=False)
-    Post_id = Column(Integer, ForeignKey('User.id'))
-    post = relationship(User)
+# class Post(Base):
+#     __tablename__ = 'Post'
+#     # Here we define columns for the table person
+#     # Notice that each column is also a normal Python instance attribute.
+#     id = Column(Integer, primary_key=True)
+#     post_comment = Column(String(250), nullable=False)
+#     Post_id = Column(Integer, ForeignKey('User.id'))
+#     post = relationship(User)
 
 class Favorite_Character(Base):
     __tablename__ = 'Favorite_character'
