@@ -47,9 +47,9 @@ class Favorite_Character(Base):
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('User.id'))
-    character = relationship(User)
+    User = relationship(User)
     character_id = Column(Integer, ForeignKey('Character.id'))
-    character1_id = relationship(Character)
+    User = relationship(Character)
 
 class Favorite_Planet(Base):
     __tablename__ = 'Favorite_planet'
@@ -57,9 +57,9 @@ class Favorite_Planet(Base):
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('User.id'))
-    character_id = relationship(User)
+    User = relationship(User)
     planet_id = Column(Integer, ForeignKey('Planet.id'))
-    planet1_id = relationship(Planet)
+    user = relationship(Planet)
 
     def to_dict(self):
         return {}
